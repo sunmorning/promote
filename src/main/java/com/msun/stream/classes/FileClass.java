@@ -36,7 +36,7 @@ public class FileClass {
 	 * @throws IOException 
 	 */
 	public void judge() throws IOException{
-		File file = new File("./src/main/java/com/msun/stream/file/NewFile.xml");
+		File file = new File("./src/main/java/com/msun/stream/file");
 		System.out.println("canExecute: " + file.canExecute());
 		System.out.println("canWrite: " + file.canWrite());
 		System.out.println("canRead: " + file.canRead());
