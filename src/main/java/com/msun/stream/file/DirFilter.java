@@ -20,7 +20,7 @@ public class DirFilter implements FilenameFilter{
 	}
 	
 	public boolean accept(File dir, String name) {
-		return pattern.matcher(name).matches();
+		return pattern.matcher(name).matches(); 
 	}
 
 }
