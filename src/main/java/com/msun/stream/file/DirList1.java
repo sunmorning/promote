@@ -8,5 +8,7 @@
 package com.msun.stream.file;
 
 public class DirList1 {
-
+	public static void main(String[] arg0){
+		System.out.println("main...");
+	}
 }
