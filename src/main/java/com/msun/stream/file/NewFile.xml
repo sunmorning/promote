@@ -1,1 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<Page>
+	<Grid id="neGrid" description="网元信息 " rowDataLoadUrl = "#{.webContext}/transfer/interface/queryResEntityDetail.spr?resId=#{dynResult.TRS_NE_ID}"
+	   gridDataSqlId="queryNe" afterLoadFunction="_addNeRowColor" autoLoadData="false" >
+		<!-- gridDataLoadUrl = "#{.webContext}/transfer/interface/queryResRelEntitys.spr?resId=#{request.resId||property.SYS_ID}&amp;buzTypeEnum=1053" -->
+		<QueryParams>
+               <Param name="sys_id">#{property.SYS_ID||request.resId}</Param>
+        </QueryParams>
+	     <QueryResult rowId="TRS_NE_ID">
+	        <Result id="RES_TYPE" extractValue = "#{RES_TYPE}" label="资源类型" align = "center" textAlign = "center" type="ed" width="100" sort="str"/>
+	        <Result id="NE_NAME" extractValue = "#{NE_NAME}" label="网元名称" align = "left"  textAlign = "center" type="ed" width="250" sort="str" />
+	        <Result id="NE_NO" extractValue = "#{NE_NO}" label="网元编码" align = "left" textAlign = "center" type="ed" width="250" sort="str" />
+	        <Result id="NE_TYPE" extractValue = "#{NE_TYPE}" label="网元类型" align = "left" textAlign = "center" type="ed" width="100" sort="str" />
+	        <Result id="ROOM_NAME" extractValue = "#{ROOM_NAME}" label="所属机房" align = "left" textAlign = "center" type="ed" width="200" sort="str" />
+	        <Result id="ROOM_TYPE" extractValue = "#{ROOM_TYPE}" label="机房类型" align = "center" textAlign = "center" type="ed" width="100" sort="str" />
+	    </QueryResult>
+	</Grid>
+	
+	<Grid id="segGrid" description="段信息" rowDataLoadUrl = "#{.webContext}/transfer/interface/queryResEntityDetail.spr?resId=#{dynResult.SEG_ID}"
+		gridDataLoadUrl = "#{.webContext}/transfer/interface/queryResRelEntitys.spr?resId=#{request.resId||property.SYS_ID}&amp;buzTypeEnum=1003" afterLoadFunction="refreshTrsNeGrid">
+	        <QueryResult rowId="SEG_ID">
+	            <Result id="SEG_NO" extractValue="#{SEG_NO||SEG_CODE}" label="段编码" align = "left" textAlign = "center" type="ed" width="200" sort="str"/>
+	        	<Result id="SEG_NAME" extractValue="#{SEG_NAME}" label="段名称" align = "left"  textAlign = "center" type="ed" width="200" sort="str" />
+	        	<Result id="SEG_TYPE" extractValue="#{SEG_TYPE}" label="段类型" align = "center" textAlign = "center" type="ed" width="100" sort="str" />
+	        	<Result id="BAND_WIDTH" extractValue="#{BAND_WIDTH}" label="段容量" align = "center" textAlign = "center" type="ed" width="100" sort="str" />
+	        	<Result id="WORK_STATE" extractValue="#{WORK_STATE}" label="工作模式" align = "center" textAlign = "center" type="ed" width="100" sort="str" />
+	        	<Result id="A_ROOM_NAME" extractValue="#{A_ROOM_NAME}" label="A端机房" align = "left" textAlign = "center" type="ed" width="200" sort="str" />
+	        	<Result id="Z_ROOM_NAME" extractValue="#{Z_ROOM_NAME}" label="Z端机房" align = "left" textAlign = "center" type="ed" width="200" sort="str" />
+	        	<Result id="A_DEVICE_NAME" extractValue="#{A_DEVICE_NAME}" label="A端网元" align = "left" textAlign = "center" type="ed" width="200" sort="str" />
+	        	<Result id="Z_DEVICE_NAME" extractValue="#{Z_DEVICE_NAME}" label="Z端网元" align = "left" textAlign = "center" type="ed" width="200" sort="str" />
+	        	<Result id="A_PORT_NO" extractValue="#{A_PORT_NO}" label="A端端口" align = "left" textAlign = "center" type="ed" width="200" sort="str" />
+	        	<Result id="Z_PORT_NO" extractValue="#{Z_PORT_NO}" label="Z端端口" align = "left" textAlign = "center" type="ed" width="200" sort="str" />
+	        </QueryResult>
+	</Grid>	
+</Page>
