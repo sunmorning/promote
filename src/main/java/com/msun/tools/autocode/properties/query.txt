@@ -1,0 +1,18 @@
+select bl.busi_link_id,
+     bl.name,
+     bl.no,
+     bl.res_spec_id,
+     llc.Link_Id,
+     llc.a_Lgc_Eqp_Id,
+     llc.a_Lgc_Port_Id,
+     llc.Line_Id,
+     llc.z_Lgc_Eqp_Id,
+     llc.z_Lgc_Port_Id, 
+     (select a.name from spc_area a where a.area_id = llc.Partition_Id) area_name
+     from lnk_business_link      bl,
+     lnk_busi_link_2_link   bll,
+     lnk_lgc_link_component llc
+     where bll.busi_link_id = bl.busi_link_id
+     and llc.link_id = bll.link_id
+     and bl.res_spec_id = 1071
+     and bl.busi_link_id = ?

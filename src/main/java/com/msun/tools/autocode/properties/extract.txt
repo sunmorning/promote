@@ -1,0 +1,5 @@
+sbf.append(" select lbl.busi_link_id, lbl.name, lbl.res_spec_id, lbll.link_id");
+sbf.append(" from lnk_busi_link_2_link lbll, lnk_business_link lbl");
+sbf.append(" where lbl.busi_link_id = lbll.busi_link_id");
+sbf.append(" and lbl.res_spec_id in (1006, 1007)");
+sbf.append(" and lbll.link_id = ?");

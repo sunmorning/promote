@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="39" started-at="2016-08-09T01:59:44Z" finished-at="2016-08-09T01:59:44Z">
+  <suite name="Default suite" duration-ms="46" started-at="2016-09-13T09:49:04Z" finished-at="2016-09-13T09:49:04Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="39" started-at="2016-08-09T01:59:44Z" finished-at="2016-08-09T01:59:44Z">
-      <class name="com.msun.stream.classes.FileClassTest">
-        <test-method status="PASS" signature="judge()[pri:0, instance:com.msun.stream.classes.FileClassTest@3c1a1399]" name="judge" duration-ms="22" started-at="2016-08-09T09:59:44Z" finished-at="2016-08-09T09:59:44Z">
+    <test name="Default test" duration-ms="46" started-at="2016-09-13T09:49:04Z" finished-at="2016-09-13T09:49:04Z">
+      <class name="com.msun.annotation.retention.RetentionAnnotationTest">
+        <test-method status="PASS" signature="compare()[pri:0, instance:com.msun.annotation.retention.RetentionAnnotationTest@1d119efb]" name="compare" duration-ms="17" started-at="2016-09-13T17:49:04Z" finished-at="2016-09-13T17:49:04Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- judge -->
-      </class> <!-- com.msun.stream.classes.FileClassTest -->
+        </test-method> <!-- compare -->
+      </class> <!-- com.msun.annotation.retention.RetentionAnnotationTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
